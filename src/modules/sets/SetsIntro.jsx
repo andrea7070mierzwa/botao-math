@@ -2,8 +2,8 @@ import { useState } from "react";
 import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
-import { draggableItems, setsIntroData } from "../../data/setsData.js";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
+import { draggableItems, setsIntroData } from "../../data/setsData.js";
 
 function SetsIntro() {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -29,53 +29,32 @@ function SetsIntro() {
       return;
     }
 
-    if (draggedItem.group !== "fruta") {
+    handleItemSelect(draggedItem);
+    setDraggedItem(null);
+  }
+
+  function handleItemSelect(item) {
+    if (item.group !== "fruta") {
       setFeedback({
         type: "error",
-        message: `${draggedItem.emoji} ${draggedItem.label} não pertence ao conjunto das frutas. O conjunto agradece a visita, mas não deixa entrar. 😄`,
+        message: `${item.emoji} ${item.label} não pertence ao conjunto das frutas. O conjunto agradece a visita, mas não deixa entrar. 😄`,
       });
-      setDraggedItem(null);
       return;
     }
 
-    if (selectedItems.includes(draggedItem.id)) {
+    if (selectedItems.includes(item.id)) {
       setFeedback({
         type: "neutral",
-        message: `${draggedItem.emoji} ${draggedItem.label} já está no conjunto. Repetição aqui não passa despercebida!`,
+        message: `${item.emoji} ${item.label} já está no conjunto. Repetição aqui não passa despercebida!`,
       });
-      setDraggedItem(null);
       return;
     }
-    function handleItemSelect(item) {
-      if (item.group !== "fruta") {
-        setFeedback({
-          type: "error",
-          message: `${item.emoji} ${item.label} não pertence ao conjunto das frutas. O conjunto agradece a visita, mas não deixa entrar. 😄`,
-        });
-        return;
-      }
 
-      if (selectedItems.includes(item.id)) {
-        setFeedback({
-          type: "neutral",
-          message: `${item.emoji} ${item.label} já está no conjunto. Repetição aqui não passa despercebida!`,
-        });
-        return;
-      }
-
-      setSelectedItems([...selectedItems, item.id]);
-      setFeedback({
-        type: "success",
-        message: `${item.emoji} ${item.label} pertence ao conjunto das frutas. Muito bem!`,
-      });
-    }
-
-    setSelectedItems([...selectedItems, draggedItem.id]);
+    setSelectedItems([...selectedItems, item.id]);
     setFeedback({
       type: "success",
-      message: `${draggedItem.emoji} ${draggedItem.label} pertence ao conjunto das frutas. Muito bem!`,
+      message: `${item.emoji} ${item.label} pertence ao conjunto das frutas. Muito bem!`,
     });
-    setDraggedItem(null);
   }
 
   function handleRemoveItem(itemId) {
@@ -136,15 +115,17 @@ function SetsIntro() {
           <span className="module-kicker">Mexa você</span>
           <h2>Arraste para montar o conjunto das frutas</h2>
           <p>
-            Arraste os elementos para dentro do círculo. Se ele pertence ao
-            conjunto das frutas, entra. Se não pertence, o conjunto barra na
+            Arraste ou clique nos elementos que pertencem ao conjunto das
+            frutas. Se ele pertence, entra. Se não pertence, o conjunto barra na
             portaria.
           </p>
+
+          <ReadAloudButton
+            label="Ouvir instrução"
+            text="Arraste ou clique nos elementos que pertencem ao conjunto das frutas. Maçã, banana e uva pertencem ao conjunto. Cachorro, bola e número dois não pertencem."
+          />
         </div>
-        <ReadAloudButton
-          label="Ouvir instrução"
-          text="Arraste ou clique nos elementos que pertencem ao conjunto das frutas. Maçã, banana e uva pertencem ao conjunto. Cachorro, bola e número dois não pertencem."
-        />
+
         <div className="lab-grid">
           <div className="items-bank">
             <h3>Elementos disponíveis</h3>
@@ -167,7 +148,8 @@ function SetsIntro() {
             </div>
 
             <p className="drag-hint">
-              Dica: clique, segure e arraste para dentro do conjunto.
+              Dica: clique, segure e arraste para dentro do conjunto. Ou só
+              clique no item, que também funciona.
             </p>
           </div>
 
@@ -180,7 +162,7 @@ function SetsIntro() {
 
             <div className="circle-area">
               {selectedFruits.length === 0 ? (
-                <p>Arraste as frutas para cá.</p>
+                <p>Arraste ou clique nas frutas para cá.</p>
               ) : (
                 selectedFruits.map((fruit) => (
                   <button
@@ -188,6 +170,7 @@ function SetsIntro() {
                     className="inside-item"
                     onClick={() => handleRemoveItem(fruit.id)}
                     title="Clique para remover"
+                    aria-label={`Remover ${fruit.label} do conjunto das frutas`}
                   >
                     {fruit.emoji} {fruit.label}
                   </button>
@@ -195,7 +178,11 @@ function SetsIntro() {
               )}
             </div>
 
-            <button className="reset-button" onClick={handleResetActivity}>
+            <button
+              className="reset-button"
+              type="button"
+              onClick={handleResetActivity}
+            >
               Esvaziar conjunto
             </button>
           </div>
