@@ -4,6 +4,7 @@ import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
 import { belongsData } from "../../data/setsData.js";
+import TutorAssistant from "../assessments/TutorAssistant.jsx";
 
 function BelongsActivity() {
   const [feedback, setFeedback] = useState(null);
@@ -120,6 +121,8 @@ function BelongsActivity() {
         </div>
 
         <FeedbackMessage feedback={feedback} />
+
+        <TutorAssistant topic="pertence e não pertence" />
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">
