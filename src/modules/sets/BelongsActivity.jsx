@@ -8,14 +8,44 @@ import TutorAssistant from "../assessments/TutorAssistant.jsx";
 
 function BelongsActivity() {
   const [feedback, setFeedback] = useState(null);
-  const [answeredIds, setAnsweredIds] = useState([]);
+  const [answers, setAnswers] = useState([]);
+
+  const totalQuestions = belongsData.statements.length;
+  const answeredCount = answers.length;
+  const correctCount = answers.filter((answer) => answer.isCorrect).length;
+  const wrongCount = answeredCount - correctCount;
+  const scorePercent =
+    totalQuestions === 0
+      ? 0
+      : Math.round((correctCount / totalQuestions) * 100);
+
+  const finishedActivity = answeredCount === totalQuestions;
 
   function handleAnswer(statement, answer) {
     const gotItRight = answer === statement.isCorrect;
 
-    if (!answeredIds.includes(statement.id)) {
-      setAnsweredIds([...answeredIds, statement.id]);
-    }
+    const newAnswer = {
+      statementId: statement.id,
+      statementText: statement.text,
+      readable: statement.readable,
+      selectedAnswer: answer,
+      correctAnswer: statement.isCorrect,
+      isCorrect: gotItRight,
+    };
+
+    setAnswers((currentAnswers) => {
+      const alreadyAnswered = currentAnswers.some(
+        (item) => item.statementId === statement.id
+      );
+
+      if (alreadyAnswered) {
+        return currentAnswers.map((item) =>
+          item.statementId === statement.id ? newAnswer : item
+        );
+      }
+
+      return [...currentAnswers, newAnswer];
+    });
 
     setFeedback({
       type: gotItRight ? "success" : "error",
@@ -23,6 +53,31 @@ function BelongsActivity() {
         ? statement.explanation
         : `Ainda não. Repare no conjunto A e tente pensar se o elemento aparece lá. ${statement.explanation}`,
     });
+  }
+
+  function handleRestartActivity() {
+    setAnswers([]);
+    setFeedback({
+      type: "neutral",
+      message:
+        "Atividade reiniciada. Vamos tentar de novo, agora com a matemática menos metida a misteriosa.",
+    });
+  }
+
+  function getDiagnosticMessage() {
+    if (!finishedActivity) {
+      return "Responda todas as afirmações para receber uma sugestão de revisão.";
+    }
+
+    if (scorePercent === 100) {
+      return "Excelente! Você identificou corretamente quem pertence e quem não pertence ao conjunto.";
+    }
+
+    if (scorePercent >= 70) {
+      return "Muito bom! Você entendeu a ideia principal. Vale revisar com calma os símbolos ∈ e ∉ para não trocar os sinais.";
+    }
+
+    return "Vamos revisar juntos. Observe primeiro o símbolo e depois confira se o número aparece dentro das chaves do conjunto.";
   }
 
   return (
@@ -91,7 +146,9 @@ function BelongsActivity() {
             <article
               key={statement.id}
               className={`statement-card ${
-                answeredIds.includes(statement.id) ? "answered" : ""
+                answers.some((answer) => answer.statementId === statement.id)
+                  ? "answered"
+                  : ""
               }`}
             >
               <div>
@@ -121,6 +178,46 @@ function BelongsActivity() {
         </div>
 
         <FeedbackMessage feedback={feedback} />
+
+        <section className="performance-card" aria-label="Resumo de desempenho">
+          <div className="performance-header">
+            <div>
+              <span className="module-kicker">Acompanhamento</span>
+              <h2>Como foi sua atividade?</h2>
+            </div>
+
+            <strong className="score-badge">{scorePercent}%</strong>
+          </div>
+
+          <div className="performance-grid">
+            <div>
+              <strong>{answeredCount}</strong>
+              <span>respondidas</span>
+            </div>
+
+            <div>
+              <strong>{correctCount}</strong>
+              <span>acertos</span>
+            </div>
+
+            <div>
+              <strong>{wrongCount}</strong>
+              <span>erros</span>
+            </div>
+          </div>
+
+          <p className="diagnostic-message">{getDiagnosticMessage()}</p>
+
+          {finishedActivity && (
+            <button
+              type="button"
+              className="restart-button"
+              onClick={handleRestartActivity}
+            >
+              Refazer atividade
+            </button>
+          )}
+        </section>
 
         <TutorAssistant topic="pertence e não pertence" />
       </section>
