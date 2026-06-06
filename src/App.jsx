@@ -1,17 +1,22 @@
+import { useState } from "react";
 import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import SetsIntro from "./modules/sets/SetsIntro.jsx";
+import BelongsActivity from "./modules/sets/BelongsActivity.jsx";
 
 function App() {
+  const [activeModule, setActiveModule] = useState("sets-intro");
+
   return (
     <div className="app-shell">
       <Header />
 
       <main className="app-layout">
-        <Sidebar />
+        <Sidebar activeModule={activeModule} onChangeModule={setActiveModule} />
 
         <section className="content-area">
-          <SetsIntro />
+          {activeModule === "sets-intro" && <SetsIntro />}
+          {activeModule === "belongs" && <BelongsActivity />}
         </section>
 
         <aside className="right-panel">
@@ -28,8 +33,8 @@ function App() {
             <span className="card-icon">🎯</span>
             <h3>Missão</h3>
             <p>
-              Entender que um conjunto é uma coleção de elementos com algo em
-              comum.
+              Entender se um elemento faz parte ou não de um conjunto, sem
+              precisar invocar o fantasma da matemática.
             </p>
           </div>
         </aside>

@@ -1,12 +1,35 @@
 const topics = [
-  { icon: "🧺", title: "Conjuntos", active: true },
-  { icon: "🔢", title: "Números", active: false },
-  { icon: "🌡️", title: "Inteiros", active: false },
-  { icon: "🍕", title: "Frações", active: false },
-  { icon: "📐", title: "Geometria", active: false },
+  {
+    id: "sets-intro",
+    icon: "🧺",
+    title: "Conjuntos",
+  },
+  {
+    id: "belongs",
+    icon: "🔎",
+    title: "Pertence",
+  },
+  {
+    id: "numbers",
+    icon: "🔢",
+    title: "Números",
+    disabled: true,
+  },
+  {
+    id: "integers",
+    icon: "🌡️",
+    title: "Inteiros",
+    disabled: true,
+  },
+  {
+    id: "fractions",
+    icon: "🍕",
+    title: "Frações",
+    disabled: true,
+  },
 ];
 
-function Sidebar() {
+function Sidebar({ activeModule, onChangeModule }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-title">
@@ -17,15 +40,20 @@ function Sidebar() {
         </div>
       </div>
 
-      <nav className="topic-list">
+      <nav className="topic-list" aria-label="Trilhas do Botão Math">
         {topics.map((topic) => (
           <button
-            key={topic.title}
-            className={`topic-button ${topic.active ? "active" : ""}`}
+            key={topic.id}
+            className={`topic-button ${
+              activeModule === topic.id ? "active" : ""
+            }`}
+            onClick={() => !topic.disabled && onChangeModule(topic.id)}
+            disabled={topic.disabled}
+            aria-current={activeModule === topic.id ? "page" : undefined}
           >
-            <span>{topic.icon}</span>
+            <span aria-hidden="true">{topic.icon}</span>
             {topic.title}
-            {topic.active && <strong>Atual</strong>}
+            {activeModule === topic.id && <strong>Atual</strong>}
           </button>
         ))}
       </nav>
