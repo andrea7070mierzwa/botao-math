@@ -25,7 +25,6 @@ const topicGroups = [
         id: "union",
         icon: "∪",
         title: "União",
-        disabled: true,
       },
       {
         id: "intersection",
@@ -152,7 +151,9 @@ function Sidebar({ activeModule, onChangeModule }) {
             <section key={group.id} className="topic-group">
               <button
                 type="button"
-                className={`topic-group-button ${hasActiveItem ? "has-active" : ""}`}
+                className={`topic-group-button ${
+                  hasActiveItem ? "has-active" : ""
+                }`}
                 onClick={() => toggleGroup(group.id)}
                 aria-expanded={isOpen}
               >
@@ -172,7 +173,9 @@ function Sidebar({ activeModule, onChangeModule }) {
                       }`}
                       onClick={() => !item.disabled && onChangeModule(item.id)}
                       disabled={item.disabled}
-                      aria-current={activeModule === item.id ? "page" : undefined}
+                      aria-current={
+                        activeModule === item.id ? "page" : undefined
+                      }
                     >
                       <span aria-hidden="true">{item.icon}</span>
                       {item.title}

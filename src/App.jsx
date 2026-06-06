@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import SetsIntro from "./modules/sets/SetsIntro.jsx";
 import BelongsActivity from "./modules/sets/BelongsActivity.jsx";
 import EmptyUnitaryActivity from "./modules/sets/EmptyUnitaryActivity.jsx";
+import UnionActivity from "./modules/sets/UnionActivity.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -19,6 +20,7 @@ function App() {
           {activeModule === "sets-intro" && <SetsIntro />}
           {activeModule === "belongs" && <BelongsActivity />}
           {activeModule === "empty-unitary" && <EmptyUnitaryActivity />}
+          {activeModule === "union" && <UnionActivity />}
         </section>
 
         <aside className="right-panel">

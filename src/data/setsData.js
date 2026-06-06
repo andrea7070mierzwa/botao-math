@@ -152,3 +152,27 @@ export function applyEmptyAndUnitaryFilter(filterId, items) {
 
   return [];
 }
+export const unionData = {
+  title: "União de conjuntos",
+  explanation:
+    "A união junta todos os elementos de dois conjuntos, sem repetir elementos que aparecem nos dois.",
+  realLife: [
+    "Juntar a lista de alunos de duas turmas",
+    "Unir contatos do celular com contatos do e-mail",
+    "Juntar materiais pedidos por dois professores",
+    "Combinar convidados de duas famílias",
+    "Unir produtos de duas categorias em uma busca",
+  ],
+  setA: {
+    name: "A",
+    elements: [1, 2, 3],
+  },
+  setB: {
+    name: "B",
+    elements: [3, 4, 5],
+  },
+};
+
+export function getUnion(setA, setB) {
+  return [...new Set([...setA, ...setB])];
+}
