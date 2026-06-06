@@ -1009,3 +1009,25 @@
     grid-template-columns: 1fr;
   }
 }
+.venn-intersection-lab {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.venn-item.common,
+.union-item.common {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+}
+
+.intersection-result-display {
+  border-color: #10b981;
+  background: radial-gradient(circle, #ecfdf5, #f3e8ff);
+}
+
+@media (max-width: 800px) {
+  .venn-intersection-lab {
+    grid-template-columns: 1fr;
+  }
+}

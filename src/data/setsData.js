@@ -176,3 +176,27 @@ export const unionData = {
 export function getUnion(setA, setB) {
   return [...new Set([...setA, ...setB])];
 }
+export const intersectionData = {
+  title: "Interseção de conjuntos",
+  explanation:
+    "A interseção mostra apenas os elementos que pertencem aos dois conjuntos ao mesmo tempo.",
+  realLife: [
+    "Alunos que fazem teatro e música",
+    "Produtos baratos e com frete grátis",
+    "Livros de aventura que estão disponíveis",
+    "Pessoas que gostam de matemática e tecnologia",
+    "Materiais pedidos por dois professores ao mesmo tempo",
+  ],
+  setA: {
+    name: "A",
+    elements: [1, 2, 3, 4],
+  },
+  setB: {
+    name: "B",
+    elements: [3, 4, 5, 6],
+  },
+};
+
+export function getIntersection(setA, setB) {
+  return setA.filter((element) => setB.includes(element));
+}

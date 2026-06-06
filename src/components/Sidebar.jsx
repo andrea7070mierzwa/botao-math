@@ -30,7 +30,6 @@ const topicGroups = [
         id: "intersection",
         icon: "∩",
         title: "Interseção",
-        disabled: true,
       },
       {
         id: "difference",
