@@ -7,29 +7,77 @@ import { draggableItems, setsIntroData } from "../../data/setsData.js";
 function SetsIntro() {
   const [selectedItems, setSelectedItems] = useState([]);
   const [feedback, setFeedback] = useState(null);
+  const [draggedItem, setDraggedItem] = useState(null);
 
-  function handleItemClick(item) {
-    if (item.group === "fruta") {
-      if (!selectedItems.includes(item.id)) {
-        setSelectedItems([...selectedItems, item.id]);
-      }
+  function handleDragStart(item) {
+    setDraggedItem(item);
+    setFeedback({
+      type: "neutral",
+      message: `Você está levando ${item.emoji} ${item.label}. Vamos ver se pertence ao conjunto...`,
+    });
+  }
 
-      setFeedback({
-        type: "success",
-        message: `${item.emoji} ${item.label} pertence ao conjunto das frutas. Muito bem!`,
-      });
+  function handleDragOver(event) {
+    event.preventDefault();
+  }
 
+  function handleDrop(event) {
+    event.preventDefault();
+
+    if (!draggedItem) {
       return;
     }
 
+    if (draggedItem.group !== "fruta") {
+      setFeedback({
+        type: "error",
+        message: `${draggedItem.emoji} ${draggedItem.label} não pertence ao conjunto das frutas. O conjunto agradece a visita, mas não deixa entrar. 😄`,
+      });
+      setDraggedItem(null);
+      return;
+    }
+
+    if (selectedItems.includes(draggedItem.id)) {
+      setFeedback({
+        type: "neutral",
+        message: `${draggedItem.emoji} ${draggedItem.label} já está no conjunto. Repetição aqui não passa despercebida!`,
+      });
+      setDraggedItem(null);
+      return;
+    }
+
+    setSelectedItems([...selectedItems, draggedItem.id]);
     setFeedback({
-      type: "error",
-      message: `${item.emoji} ${item.label} não pertence ao conjunto das frutas. O conjunto protestou educadamente.`,
+      type: "success",
+      message: `${draggedItem.emoji} ${draggedItem.label} pertence ao conjunto das frutas. Muito bem!`,
+    });
+    setDraggedItem(null);
+  }
+
+  function handleRemoveItem(itemId) {
+    setSelectedItems(selectedItems.filter((id) => id !== itemId));
+    setFeedback({
+      type: "neutral",
+      message:
+        "Elemento removido do conjunto. Matemática também tem botão de desfazer moral.",
+    });
+  }
+
+  function handleResetActivity() {
+    setSelectedItems([]);
+    setFeedback({
+      type: "neutral",
+      message:
+        "Conjunto esvaziado. Começamos de novo, sem julgamento matemático.",
     });
   }
 
   const selectedFruits = draggableItems.filter((item) =>
     selectedItems.includes(item.id)
+  );
+
+  const availableItems = draggableItems.filter(
+    (item) => !selectedItems.includes(item.id)
   );
 
   return (
@@ -58,10 +106,11 @@ function SetsIntro() {
       <section className="interactive-lab">
         <div className="lab-info">
           <span className="module-kicker">Mexa você</span>
-          <h2>Monte o conjunto das frutas</h2>
+          <h2>Arraste para montar o conjunto das frutas</h2>
           <p>
-            Clique nos elementos que pertencem ao conjunto. Se não for fruta, o
-            conjunto vai reclamar, mas com educação matemática.
+            Arraste os elementos para dentro do círculo. Se ele pertence ao
+            conjunto das frutas, entra. Se não pertence, o conjunto barra na
+            portaria.
           </p>
         </div>
 
@@ -70,33 +119,52 @@ function SetsIntro() {
             <h3>Elementos disponíveis</h3>
 
             <div className="item-buttons">
-              {draggableItems.map((item) => (
+              {availableItems.map((item) => (
                 <button
                   key={item.id}
                   className="math-item"
-                  onClick={() => handleItemClick(item)}
+                  draggable
+                  onDragStart={() => handleDragStart(item)}
+                  title="Arraste para o conjunto"
                 >
                   <span>{item.emoji}</span>
                   {item.label}
                 </button>
               ))}
             </div>
+
+            <p className="drag-hint">
+              Dica: clique, segure e arraste para dentro do conjunto.
+            </p>
           </div>
 
-          <div className="set-circle">
+          <div
+            className={`set-circle ${draggedItem ? "drop-ready" : ""}`}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+          >
             <h3>Conjunto das frutas</h3>
 
             <div className="circle-area">
               {selectedFruits.length === 0 ? (
-                <p>O conjunto ainda está vazio.</p>
+                <p>Arraste as frutas para cá.</p>
               ) : (
                 selectedFruits.map((fruit) => (
-                  <span key={fruit.id} className="inside-item">
+                  <button
+                    key={fruit.id}
+                    className="inside-item"
+                    onClick={() => handleRemoveItem(fruit.id)}
+                    title="Clique para remover"
+                  >
                     {fruit.emoji} {fruit.label}
-                  </span>
+                  </button>
                 ))
               )}
             </div>
+
+            <button className="reset-button" onClick={handleResetActivity}>
+              Esvaziar conjunto
+            </button>
           </div>
         </div>
 

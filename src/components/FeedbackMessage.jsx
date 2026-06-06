@@ -2,7 +2,7 @@ function FeedbackMessage({ feedback }) {
   if (!feedback) {
     return (
       <p className="feedback neutral">
-        Clique nos elementos que pertencem ao conjunto das frutas.
+        Arraste os elementos que pertencem ao conjunto das frutas.
       </p>
     );
   }
