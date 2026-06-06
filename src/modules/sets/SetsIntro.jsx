@@ -3,6 +3,7 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import { draggableItems, setsIntroData } from "../../data/setsData.js";
+import ReadAloudButton from "../../components/ReadAloudButton.jsx";
 
 function SetsIntro() {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -44,6 +45,29 @@ function SetsIntro() {
       });
       setDraggedItem(null);
       return;
+    }
+    function handleItemSelect(item) {
+      if (item.group !== "fruta") {
+        setFeedback({
+          type: "error",
+          message: `${item.emoji} ${item.label} não pertence ao conjunto das frutas. O conjunto agradece a visita, mas não deixa entrar. 😄`,
+        });
+        return;
+      }
+
+      if (selectedItems.includes(item.id)) {
+        setFeedback({
+          type: "neutral",
+          message: `${item.emoji} ${item.label} já está no conjunto. Repetição aqui não passa despercebida!`,
+        });
+        return;
+      }
+
+      setSelectedItems([...selectedItems, item.id]);
+      setFeedback({
+        type: "success",
+        message: `${item.emoji} ${item.label} pertence ao conjunto das frutas. Muito bem!`,
+      });
     }
 
     setSelectedItems([...selectedItems, draggedItem.id]);
@@ -94,6 +118,10 @@ function SetsIntro() {
       <LessonCard icon="🧺" title={setsIntroData.title}>
         <p>{setsIntroData.explanation}</p>
 
+        <ReadAloudButton
+          text={`${setsIntroData.title}. ${setsIntroData.explanation}`}
+        />
+
         <div className="example-grid">
           {setsIntroData.examples.map((example) => (
             <span key={example}>{example}</span>
@@ -113,7 +141,10 @@ function SetsIntro() {
             portaria.
           </p>
         </div>
-
+        <ReadAloudButton
+          label="Ouvir instrução"
+          text="Arraste ou clique nos elementos que pertencem ao conjunto das frutas. Maçã, banana e uva pertencem ao conjunto. Cachorro, bola e número dois não pertencem."
+        />
         <div className="lab-grid">
           <div className="items-bank">
             <h3>Elementos disponíveis</h3>
@@ -124,10 +155,12 @@ function SetsIntro() {
                   key={item.id}
                   className="math-item"
                   draggable
+                  onClick={() => handleItemSelect(item)}
                   onDragStart={() => handleDragStart(item)}
-                  title="Arraste para o conjunto"
+                  title="Arraste ou clique para testar se pertence ao conjunto"
+                  aria-label={`${item.label}. Arraste ou clique para testar se pertence ao conjunto das frutas.`}
                 >
-                  <span>{item.emoji}</span>
+                  <span aria-hidden="true">{item.emoji}</span>
                   {item.label}
                 </button>
               ))}

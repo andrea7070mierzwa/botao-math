@@ -476,3 +476,31 @@
 .reset-button:hover {
   background: #e9d5ff;
 }
+.read-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.read-button:hover {
+  background: #ddd6fe;
+  transform: translateY(-1px);
+}
+
+.read-button:focus-visible,
+.math-item:focus-visible,
+.inside-item:focus-visible,
+.reset-button:focus-visible,
+.topic-button:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
