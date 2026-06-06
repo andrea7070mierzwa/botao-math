@@ -68,3 +68,87 @@ export const belongsData = {
     },
   ],
 };
+export const emptyAndUnitaryData = {
+  title: "Conjunto vazio, unitário e com vários elementos",
+  explanation:
+    "Um conjunto pode não ter nenhum elemento, ter apenas um elemento ou ter vários elementos. Isso depende da regra usada para escolher os elementos.",
+  realLife: [
+    "Busca sem resultado em uma loja online",
+    "Lista com apenas um aluno sorteado",
+    "Produtos encontrados por um filtro",
+    "Livros disponíveis em uma categoria",
+    "Materiais separados por tipo",
+  ],
+  items: [
+    { id: 1, label: "1", type: "numero", value: 1 },
+    { id: 2, label: "2", type: "numero", value: 2 },
+    { id: 3, label: "3", type: "numero", value: 3 },
+    { id: 4, label: "4", type: "numero", value: 4 },
+    { id: 5, label: "5", type: "numero", value: 5 },
+    { id: 6, label: "Maçã", type: "fruta", emoji: "🍎" },
+    { id: 7, label: "Lápis", type: "material", emoji: "✏️" },
+    { id: 8, label: "Caderno", type: "material", emoji: "📓" },
+    { id: 9, label: "Bola", type: "objeto", emoji: "⚽" },
+  ],
+  filters: [
+    {
+      id: "greater-than-10",
+      label: "Números maiores que 10",
+      resultType: "empty",
+      explanation:
+        "Nenhum número da lista é maior que 10. Por isso, o resultado é um conjunto vazio.",
+    },
+    {
+      id: "less-than-2",
+      label: "Números menores que 2",
+      resultType: "unitary",
+      explanation:
+        "Apenas o número 1 é menor que 2. Por isso, o resultado é um conjunto unitário.",
+    },
+    {
+      id: "greater-than-3",
+      label: "Números maiores que 3",
+      resultType: "multiple",
+      explanation:
+        "Os números 4 e 5 são maiores que 3. Por isso, o conjunto tem vários elementos.",
+    },
+    {
+      id: "only-fruits",
+      label: "Elementos que são frutas",
+      resultType: "unitary",
+      explanation:
+        "Apenas a maçã é fruta nesta lista. Por isso, o resultado é um conjunto unitário.",
+    },
+    {
+      id: "school-materials",
+      label: "Materiais escolares",
+      resultType: "multiple",
+      explanation:
+        "Lápis e caderno são materiais escolares. Por isso, o conjunto tem vários elementos.",
+    },
+  ],
+};
+
+export function applyEmptyAndUnitaryFilter(filterId, items) {
+  if (filterId === "greater-than-10") {
+    return items.filter((item) => item.type === "numero" && item.value > 10);
+  }
+
+  if (filterId === "less-than-2") {
+    return items.filter((item) => item.type === "numero" && item.value < 2);
+  }
+
+  if (filterId === "greater-than-3") {
+    return items.filter((item) => item.type === "numero" && item.value > 3);
+  }
+
+  if (filterId === "only-fruits") {
+    return items.filter((item) => item.type === "fruta");
+  }
+
+  if (filterId === "school-materials") {
+    return items.filter((item) => item.type === "material");
+  }
+
+  return [];
+}

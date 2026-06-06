@@ -3,6 +3,7 @@ import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import SetsIntro from "./modules/sets/SetsIntro.jsx";
 import BelongsActivity from "./modules/sets/BelongsActivity.jsx";
+import EmptyUnitaryActivity from "./modules/sets/EmptyUnitaryActivity.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -17,6 +18,7 @@ function App() {
         <section className="content-area">
           {activeModule === "sets-intro" && <SetsIntro />}
           {activeModule === "belongs" && <BelongsActivity />}
+          {activeModule === "empty-unitary" && <EmptyUnitaryActivity />}
         </section>
 
         <aside className="right-panel">

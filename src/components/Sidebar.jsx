@@ -10,6 +10,11 @@ const topics = [
     title: "Pertence",
   },
   {
+    id: "empty-unitary",
+    icon: "∅",
+    title: "Vazio e unitário",
+  },
+  {
     id: "numbers",
     icon: "🔢",
     title: "Números",
