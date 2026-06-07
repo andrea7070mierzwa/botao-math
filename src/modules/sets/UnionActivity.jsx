@@ -3,7 +3,6 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { getUnion, unionData } from "../../data/setsData.js";
 
 function UnionActivity() {
@@ -190,8 +189,6 @@ function UnionActivity() {
           feedback={feedback}
           fallbackText="Clique em Fazer A ∪ B para ver a união dos conjuntos."
         />
-
-        <TutorAssistant topic="união de conjuntos" />
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

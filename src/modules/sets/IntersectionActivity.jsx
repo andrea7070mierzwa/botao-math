@@ -3,7 +3,6 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { getIntersection, intersectionData } from "../../data/setsData.js";
 
 function IntersectionActivity() {
@@ -190,7 +189,7 @@ function IntersectionActivity() {
           fallbackText="Clique em Fazer A ∩ B para descobrir o que os conjuntos têm em comum."
         />
 
-        <TutorAssistant topic="interseção de conjuntos" />
+       
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

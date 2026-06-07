@@ -3,7 +3,6 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import {
   applyEmptyAndUnitaryFilter,
   emptyAndUnitaryData,
@@ -198,7 +197,6 @@ function EmptyUnitaryActivity() {
           fallbackText="Escolha uma regra para descobrir se o resultado é vazio, unitário ou tem vários elementos."
         />
 
-        <TutorAssistant topic="conjunto vazio e unitário" />
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

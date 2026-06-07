@@ -3,7 +3,6 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { differenceData, getDifference } from "../../data/setsData.js";
 
 function DifferenceActivity() {
@@ -277,8 +276,6 @@ function DifferenceActivity() {
           feedback={feedback}
           fallbackText="Escolha A - B ou B - A para comparar os conjuntos."
         />
-
-        <TutorAssistant topic="diferença de conjuntos" />
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

@@ -1,6 +1,5 @@
 import LessonCard from "../../components/LessonCard.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { setsSummaryData } from "../../data/setsData.js";
 
 function SetsSummary() {
@@ -64,12 +63,10 @@ function SetsSummary() {
           </p>
         </div>
 
-        <div className="ready-badge" aria-hidden="true">
-          📝
-        </div>
+        <div className="ready-badge" aria-hidden="true"></div>
       </section>
 
-      <TutorAssistant topic="resumo da trilha de conjuntos" />
+      
     </div>
   );
 }

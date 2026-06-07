@@ -221,7 +221,7 @@ function BelongsActivity() {
           )}
         </section>
 
-        <TutorAssistant topic="pertence e não pertence" />
+        
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

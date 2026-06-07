@@ -3,7 +3,6 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { numericSetsData } from "../../data/setsData.js";
 
 function NumericSetsActivity() {
@@ -197,8 +196,6 @@ function NumericSetsActivity() {
           feedback={feedback}
           fallbackText="Clique em um conjunto ou número para explorar as famílias numéricas."
         />
-
-        <TutorAssistant topic="conjuntos numéricos" />
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

@@ -2,7 +2,6 @@ import { useState } from "react";
 import LessonCard from "../../components/LessonCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { setsAssessmentData } from "../../data/setsData.js";
 
 function SetsAssessment() {
@@ -175,7 +174,7 @@ function SetsAssessment() {
           </button>
         </section>
 
-        <TutorAssistant topic="resultado da prova guiada de conjuntos" />
+      
       </div>
     );
   }
@@ -280,7 +279,7 @@ function SetsAssessment() {
         fallbackText="Escolha uma alternativa para receber feedback da questão."
       />
 
-      <TutorAssistant topic="prova guiada de conjuntos" />
+     
     </div>
   );
 }

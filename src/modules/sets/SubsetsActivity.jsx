@@ -3,7 +3,6 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-
 import { isSubset, subsetsData } from "../../data/setsData.js";
 
 function SubsetsActivity() {
@@ -194,7 +193,7 @@ function SubsetsActivity() {
           feedback={feedback}
           fallbackText="Escolha um exemplo e clique em verificar para saber se é subconjunto."
         />
-        <TutorAssistant topic="subconjuntos" />
+        
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">
