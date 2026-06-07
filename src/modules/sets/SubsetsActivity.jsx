@@ -192,8 +192,10 @@ function SubsetsActivity() {
           </section>
         </div>
 
-        <FeedbackMessage feedback={feedback} />
-
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Escolha um exemplo e clique em verificar para saber se é subconjunto."
+        />
         <TutorAssistant topic="subconjuntos" />
       </section>
 
