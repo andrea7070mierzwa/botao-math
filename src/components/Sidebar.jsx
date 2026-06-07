@@ -46,6 +46,11 @@ const topicGroups = [
         icon: "🔢",
         title: "Conjuntos numéricos",
       },
+      {
+        id: "sets-summary",
+        icon: "📚",
+        title: "Resumo da trilha",
+      },
     ],
   },
   {

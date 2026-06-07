@@ -118,7 +118,6 @@ function SubsetsActivity() {
             text="Escolha um exemplo. Observe se todos os elementos do primeiro conjunto aparecem no segundo conjunto. Se todos aparecem, temos um subconjunto."
           />
         </div>
-
         <div className="subset-example-buttons">
           {subsetsData.examples.map((example) => (
             <button
@@ -135,7 +134,6 @@ function SubsetsActivity() {
             </button>
           ))}
         </div>
-
         <div className="subset-lab">
           <section className="subset-big-box">
             <h3>Conjunto maior</h3>
@@ -191,7 +189,7 @@ function SubsetsActivity() {
             )}
           </section>
         </div>
-
+        touch
         <FeedbackMessage
           feedback={feedback}
           fallbackText="Escolha um exemplo e clique em verificar para saber se é subconjunto."

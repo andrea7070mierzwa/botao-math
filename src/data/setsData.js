@@ -356,3 +356,60 @@ export const numericSetsData = {
     },
   ],
 };
+export const setsSummaryData = {
+  title: "Resumo da trilha de Conjuntos",
+  explanation:
+    "Nesta trilha, você aprendeu a organizar elementos, comparar grupos e entender relações entre conjuntos.",
+  topics: [
+    {
+      icon: "🧺",
+      title: "O que é conjunto",
+      description:
+        "Um conjunto é uma coleção de elementos reunidos por alguma característica em comum.",
+    },
+    {
+      icon: "🔎",
+      title: "Pertence e não pertence",
+      description:
+        "Usamos ∈ quando um elemento pertence ao conjunto e ∉ quando ele não pertence.",
+    },
+    {
+      icon: "∅",
+      title: "Conjunto vazio e unitário",
+      description:
+        "Um conjunto vazio não tem elementos. Um conjunto unitário tem apenas um elemento.",
+    },
+    {
+      icon: "∪",
+      title: "União",
+      description:
+        "A união junta todos os elementos de dois conjuntos, sem repetir.",
+    },
+    {
+      icon: "∩",
+      title: "Interseção",
+      description:
+        "A interseção mostra apenas os elementos que aparecem nos dois conjuntos ao mesmo tempo.",
+    },
+    {
+      icon: "−",
+      title: "Diferença",
+      description:
+        "A diferença mostra o que está em um conjunto, mas não está no outro.",
+    },
+    {
+      icon: "⊂",
+      title: "Subconjuntos",
+      description:
+        "Um conjunto é subconjunto de outro quando todos os seus elementos também estão no conjunto maior.",
+    },
+    {
+      icon: "🔢",
+      title: "Conjuntos numéricos",
+      description:
+        "Os números também vivem em famílias: naturais, inteiros, racionais, irracionais e reais.",
+    },
+  ],
+  realLife:
+    "Conjuntos aparecem quando organizamos listas, filtramos buscas, comparamos grupos, separamos materiais, classificamos livros, analisamos dados e entendemos famílias de números.",
+};

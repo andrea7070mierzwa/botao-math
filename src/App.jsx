@@ -9,6 +9,7 @@ import IntersectionActivity from "./modules/sets/IntersectionActivity.jsx";
 import DifferenceActivity from "./modules/sets/DifferenceActivity.jsx";
 import SubsetsActivity from "./modules/sets/SubsetsActivity.jsx";
 import NumericSetsActivity from "./modules/sets/NumericSetsActivity.jsx";
+import SetsSummary from "./modules/sets/SetsSummary.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -29,6 +30,7 @@ function App() {
           {activeModule === "difference" && <DifferenceActivity />}
           {activeModule === "subsets" && <SubsetsActivity />}
           {activeModule === "numeric-sets" && <NumericSetsActivity />}
+          {activeModule === "sets-summary" && <SetsSummary />}
         </section>
 
         <aside className="right-panel">
