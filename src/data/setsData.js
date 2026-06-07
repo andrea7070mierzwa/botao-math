@@ -200,3 +200,27 @@ export const intersectionData = {
 export function getIntersection(setA, setB) {
   return setA.filter((element) => setB.includes(element));
 }
+export const differenceData = {
+  title: "Diferença de conjuntos",
+  explanation:
+    "A diferença mostra os elementos que pertencem a um conjunto, mas não pertencem ao outro.",
+  realLife: [
+    "Alunos que entregaram o trabalho, mas não fizeram a prova",
+    "Produtos pedidos, mas ainda não entregues",
+    "Livros cadastrados, mas não emprestados",
+    "Convidados confirmados, mas que ainda não chegaram",
+    "Materiais solicitados, mas não disponíveis no estoque",
+  ],
+  setA: {
+    name: "A",
+    elements: [1, 2, 3, 4],
+  },
+  setB: {
+    name: "B",
+    elements: [3, 4, 5],
+  },
+};
+
+export function getDifference(firstSet, secondSet) {
+  return firstSet.filter((element) => !secondSet.includes(element));
+}

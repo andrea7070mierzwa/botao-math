@@ -35,7 +35,6 @@ const topicGroups = [
         id: "difference",
         icon: "−",
         title: "Diferença",
-        disabled: true,
       },
       {
         id: "subsets",
