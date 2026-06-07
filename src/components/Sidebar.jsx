@@ -41,6 +41,11 @@ const topicGroups = [
         icon: "⊂",
         title: "Subconjuntos",
       },
+      {
+        id: "numeric-sets",
+        icon: "🔢",
+        title: "Conjuntos numéricos",
+      },
     ],
   },
   {

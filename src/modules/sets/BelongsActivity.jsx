@@ -177,7 +177,10 @@ function BelongsActivity() {
           ))}
         </div>
 
-        <FeedbackMessage feedback={feedback} />
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Leia cada afirmação e marque se ela é verdadeira ou falsa."
+        />
 
         <section className="performance-card" aria-label="Resumo de desempenho">
           <div className="performance-header">

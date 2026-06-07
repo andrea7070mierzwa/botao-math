@@ -188,7 +188,10 @@ function SetsIntro() {
           </div>
         </div>
 
-        <FeedbackMessage feedback={feedback} />
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Arraste ou clique nos elementos que pertencem ao conjunto das frutas."
+        />
       </section>
 
       <LessonCard icon="🛟" title="Resumo de sobrevivência">

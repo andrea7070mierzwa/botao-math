@@ -186,7 +186,10 @@ function UnionActivity() {
           </section>
         </div>
 
-        <FeedbackMessage feedback={feedback} />
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Clique em Fazer A ∪ B para ver a união dos conjuntos."
+        />
 
         <TutorAssistant topic="união de conjuntos" />
       </section>

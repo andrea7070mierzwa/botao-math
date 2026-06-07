@@ -185,7 +185,10 @@ function IntersectionActivity() {
           </section>
         </div>
 
-        <FeedbackMessage feedback={feedback} />
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Clique em Fazer A ∩ B para descobrir o que os conjuntos têm em comum."
+        />
 
         <TutorAssistant topic="interseção de conjuntos" />
       </section>

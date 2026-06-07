@@ -193,7 +193,10 @@ function EmptyUnitaryActivity() {
           </section>
         </div>
 
-        <FeedbackMessage feedback={feedback} />
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Escolha uma regra para descobrir se o resultado é vazio, unitário ou tem vários elementos."
+        />
 
         <TutorAssistant topic="conjunto vazio e unitário" />
       </section>

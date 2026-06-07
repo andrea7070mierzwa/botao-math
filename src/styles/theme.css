@@ -1234,3 +1234,250 @@
     min-height: 420px;
   }
 }
+.numeric-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 22px 0 12px;
+  padding: 22px;
+  border-radius: 24px;
+  background: #f2ecff;
+}
+
+.numeric-chain span {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.18);
+}
+
+.numeric-chain strong {
+  color: #7c3aed;
+  font-size: 2rem;
+}
+
+.chain-note {
+  margin: 0;
+  color: #625a72;
+  font-weight: 800;
+  text-align: center;
+}
+
+.numeric-lab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 18px;
+}
+
+.numeric-nested-card,
+.numeric-info-card,
+.numeric-classify-card {
+  padding: 22px;
+  border-radius: 24px;
+  background: #fbfaff;
+  border: 1px dashed rgba(124, 58, 237, 0.28);
+}
+
+.numeric-classify-card {
+  grid-column: 1 / -1;
+}
+
+.numeric-box {
+  position: relative;
+  border-radius: 28px;
+  border: 4px solid #a855f7;
+  background: rgba(250, 245, 255, 0.92);
+}
+
+.real-box {
+  min-height: 420px;
+  padding: 56px 26px 26px;
+}
+
+.rational-box {
+  min-height: 260px;
+  width: 62%;
+  padding: 52px 22px 22px;
+}
+
+.integer-box {
+  min-height: 170px;
+  padding: 48px 18px 18px;
+}
+
+.natural-box {
+  min-height: 82px;
+  display: grid;
+  place-items: center;
+}
+
+.irrational-box {
+  position: absolute;
+  right: 26px;
+  top: 120px;
+  width: 30%;
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  border-color: #ec4899;
+  background: rgba(253, 242, 248, 0.95);
+}
+
+.box-label {
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  color: #4c1d95;
+  font-weight: 900;
+}
+
+.irrational-box .box-label {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #9f1239;
+  text-align: center;
+}
+
+.numeric-set-buttons {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.numeric-set-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 16px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.numeric-set-button strong {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: white;
+}
+
+.numeric-set-button.active,
+.numeric-set-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.selected-set-card {
+  padding: 18px;
+  border-radius: 20px;
+  background: #f2ecff;
+}
+
+.selected-set-card h3 {
+  color: #4c1d95;
+}
+
+.selected-set-card p {
+  color: #625a72;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.numeric-examples,
+.number-chip-list,
+.membership-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.numeric-examples span,
+.number-chip,
+.membership-badge {
+  min-width: 54px;
+  min-height: 44px;
+  display: inline-grid;
+  place-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: white;
+  color: #4c1d95;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.12);
+}
+
+.number-chip {
+  border: none;
+  cursor: pointer;
+}
+
+.number-chip.active,
+.number-chip:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.membership-grid {
+  margin-top: 18px;
+}
+
+.membership-badge {
+  opacity: 0.35;
+}
+
+.membership-badge.active {
+  opacity: 1;
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+}
+
+.numeric-set-button:focus-visible,
+.number-chip:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .numeric-lab {
+    grid-template-columns: 1fr;
+  }
+
+  .rational-box {
+    width: 100%;
+  }
+
+  .irrational-box {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .numeric-chain span {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+
+  .numeric-chain strong {
+    font-size: 1.5rem;
+  }
+}

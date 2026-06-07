@@ -273,7 +273,10 @@ function DifferenceActivity() {
           </section>
         </div>
 
-        <FeedbackMessage feedback={feedback} />
+        <FeedbackMessage
+          feedback={feedback}
+          fallbackText="Escolha A - B ou B - A para comparar os conjuntos."
+        />
 
         <TutorAssistant topic="diferença de conjuntos" />
       </section>

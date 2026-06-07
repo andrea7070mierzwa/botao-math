@@ -1,8 +1,11 @@
-function FeedbackMessage({ feedback }) {
+function FeedbackMessage({
+  feedback,
+  fallbackText = "Interaja com a atividade para receber um retorno.",
+}) {
   if (!feedback) {
     return (
       <p className="feedback neutral" aria-live="polite">
-        Arraste ou clique nos elementos que pertencem ao conjunto das frutas.
+        {fallbackText}
       </p>
     );
   }

@@ -260,3 +260,99 @@ export const subsetsData = {
 export function isSubset(smallSet, bigSet) {
   return smallSet.every((element) => bigSet.includes(element));
 }
+export const numericSetsData = {
+  title: "Conjuntos numéricos",
+  explanation:
+    "Os números também podem ser organizados em conjuntos. Cada conjunto reúne números com características parecidas.",
+  realLife: [
+    "Contar alunos, livros e objetos",
+    "Representar temperaturas abaixo de zero",
+    "Dividir uma pizza ou uma receita",
+    "Medir diagonais, círculos e distâncias",
+    "Criar gráficos, réguas e medidas em geral",
+  ],
+  sets: [
+    {
+      id: "naturals",
+      symbol: "N",
+      name: "Naturais",
+      examples: ["0", "1", "2", "3", "10"],
+      description:
+        "São usados para contar. Exemplos: quantidade de alunos, livros, dias ou objetos.",
+    },
+    {
+      id: "integers",
+      symbol: "Z",
+      name: "Inteiros",
+      examples: ["-3", "-2", "-1", "0", "1", "2"],
+      description:
+        "Incluem os naturais e também os números negativos. Aparecem em temperatura, dívidas e andares abaixo do térreo.",
+    },
+    {
+      id: "rationals",
+      symbol: "Q",
+      name: "Racionais",
+      examples: ["1/2", "0,75", "-3", "2"],
+      description:
+        "Podem ser escritos como fração. Aparecem em dinheiro, receitas, medidas e divisões.",
+    },
+    {
+      id: "irrationals",
+      symbol: "I",
+      name: "Irracionais",
+      examples: ["√2", "π"],
+      description:
+        "Não viram uma fração simples. Aparecem em diagonais, círculos e algumas medidas especiais.",
+    },
+    {
+      id: "reals",
+      symbol: "R",
+      name: "Reais",
+      examples: ["-2", "0", "1/2", "√2", "π"],
+      description:
+        "Reúnem racionais e irracionais. São usados em réguas, gráficos, medidas e cálculos em geral.",
+    },
+  ],
+  classifyItems: [
+    {
+      id: 1,
+      label: "3",
+      belongsTo: ["N", "Z", "Q", "R"],
+      explanation:
+        "3 é natural, inteiro, racional e real. Ele é quase um cidadão com vários passaportes matemáticos.",
+    },
+    {
+      id: 2,
+      label: "-2",
+      belongsTo: ["Z", "Q", "R"],
+      explanation: "-2 é inteiro, racional e real, mas não é natural.",
+    },
+    {
+      id: 3,
+      label: "1/2",
+      belongsTo: ["Q", "R"],
+      explanation:
+        "1/2 é racional e real, porque pode ser escrito como fração.",
+    },
+    {
+      id: 4,
+      label: "0,75",
+      belongsTo: ["Q", "R"],
+      explanation:
+        "0,75 é racional e real, porque pode ser representado por fração.",
+    },
+    {
+      id: 5,
+      label: "√2",
+      belongsTo: ["I", "R"],
+      explanation: "√2 é irracional e real. Ele não vira uma fração simples.",
+    },
+    {
+      id: 6,
+      label: "π",
+      belongsTo: ["I", "R"],
+      explanation:
+        "π é irracional e real. Ele aparece muito quando estudamos círculos.",
+    },
+  ],
+};
