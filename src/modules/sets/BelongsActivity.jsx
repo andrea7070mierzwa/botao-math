@@ -4,7 +4,6 @@ import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
 import { belongsData } from "../../data/setsData.js";
-import TutorAssistant from "../assessments/TutorAssistant.jsx";
 
 function BelongsActivity() {
   const [feedback, setFeedback] = useState(null);

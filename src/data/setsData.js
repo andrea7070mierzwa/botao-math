@@ -413,3 +413,111 @@ export const setsSummaryData = {
   realLife:
     "Conjuntos aparecem quando organizamos listas, filtramos buscas, comparamos grupos, separamos materiais, classificamos livros, analisamos dados e entendemos famílias de números.",
 };
+export const setsAssessmentData = {
+  title: "Prova guiada de Conjuntos",
+  explanation:
+    "Esta prova revisa os principais conceitos da trilha de Conjuntos. Leia com calma, use a IA Tutora como apoio e responda uma questão por vez.",
+  questions: [
+    {
+      id: 1,
+      topic: "O que é conjunto",
+      question: "O que é um conjunto?",
+      options: [
+        "Uma coleção de elementos com alguma característica em comum",
+        "Uma conta de multiplicação",
+        "Um número negativo",
+        "Uma figura geométrica",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Conjunto é uma coleção de elementos reunidos por alguma característica em comum.",
+      review: "Revise o módulo O que é conjunto.",
+    },
+    {
+      id: 2,
+      topic: "Pertence",
+      question: "Se A = {2, 4, 6}, qual afirmação está correta?",
+      options: ["5 ∈ A", "4 ∈ A", "7 ∈ A", "9 ∈ A"],
+      correctIndex: 1,
+      explanation:
+        "4 ∈ A está correto, porque o número 4 aparece dentro do conjunto A.",
+      review: "Revise o módulo Pertence e não pertence.",
+    },
+    {
+      id: 3,
+      topic: "Conjunto vazio",
+      question: "Se uma regra não encontra nenhum elemento, o resultado é:",
+      options: ["Conjunto unitário", "Conjunto vazio", "União", "Interseção"],
+      correctIndex: 1,
+      explanation:
+        "Quando nenhum elemento obedece à regra, temos um conjunto vazio.",
+      review: "Revise o módulo Vazio e unitário.",
+    },
+    {
+      id: 4,
+      topic: "União",
+      question: "Se A = {1, 2} e B = {2, 3}, então A ∪ B é:",
+      options: ["{1, 2, 2, 3}", "{1, 2, 3}", "{2}", "{1}"],
+      correctIndex: 1,
+      explanation:
+        "A união junta todos os elementos sem repetir. Por isso, A ∪ B = {1, 2, 3}.",
+      review: "Revise o módulo União.",
+    },
+    {
+      id: 5,
+      topic: "Interseção",
+      question: "A interseção A ∩ B mostra:",
+      options: [
+        "Tudo que está em A ou em B",
+        "Apenas o que está nos dois conjuntos ao mesmo tempo",
+        "Apenas o que está fora dos conjuntos",
+        "Todos os números naturais",
+      ],
+      correctIndex: 1,
+      explanation:
+        "Interseção mostra apenas os elementos comuns aos dois conjuntos.",
+      review: "Revise o módulo Interseção.",
+    },
+    {
+      id: 6,
+      topic: "Diferença",
+      question: "Se A = {1, 2, 3} e B = {3, 4}, então A - B é:",
+      options: ["{1, 2}", "{3}", "{4}", "{1, 2, 3, 4}"],
+      correctIndex: 0,
+      explanation:
+        "A - B mostra o que está em A, mas não está em B. Portanto, {1, 2}.",
+      review: "Revise o módulo Diferença.",
+    },
+    {
+      id: 7,
+      topic: "Subconjuntos",
+      question: "Quando A é subconjunto de B?",
+      options: [
+        "Quando A tem mais elementos que B",
+        "Quando todos os elementos de A também aparecem em B",
+        "Quando A e B não têm nada em comum",
+        "Quando B é vazio",
+      ],
+      correctIndex: 1,
+      explanation:
+        "A é subconjunto de B quando todos os elementos de A também pertencem a B.",
+      review: "Revise o módulo Subconjuntos.",
+    },
+    {
+      id: 8,
+      topic: "Conjuntos numéricos",
+      question:
+        "O número -2 pertence principalmente a qual família apresentada?",
+      options: [
+        "Naturais apenas",
+        "Inteiros, racionais e reais",
+        "Irracionais apenas",
+        "Nenhum conjunto numérico",
+      ],
+      correctIndex: 1,
+      explanation:
+        "-2 é inteiro, racional e real. Ele não é natural porque é negativo.",
+      review: "Revise o módulo Conjuntos numéricos.",
+    },
+  ],
+};

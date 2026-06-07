@@ -1,6 +1,6 @@
 import LessonCard from "../../components/LessonCard.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-import TutorAssistant from "../assessments/TutorAssistant.jsx";
+
 import { setsSummaryData } from "../../data/setsData.js";
 
 function SetsSummary() {

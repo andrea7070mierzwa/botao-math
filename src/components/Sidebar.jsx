@@ -51,6 +51,11 @@ const topicGroups = [
         icon: "📚",
         title: "Resumo da trilha",
       },
+      {
+        id: "sets-assessment",
+        icon: "📝",
+        title: "Prova guiada",
+      },
     ],
   },
   {

@@ -3,7 +3,7 @@ import LessonCard from "../../components/LessonCard.jsx";
 import RealLifeCard from "../../components/RealLifeCard.jsx";
 import FeedbackMessage from "../../components/FeedbackMessage.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
-import TutorAssistant from "../assessments/TutorAssistant.jsx";
+
 import { isSubset, subsetsData } from "../../data/setsData.js";
 
 function SubsetsActivity() {
