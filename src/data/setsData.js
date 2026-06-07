@@ -224,3 +224,39 @@ export const differenceData = {
 export function getDifference(firstSet, secondSet) {
   return firstSet.filter((element) => !secondSet.includes(element));
 }
+export const subsetsData = {
+  title: "Subconjuntos",
+  explanation:
+    "Um conjunto é subconjunto de outro quando todos os seus elementos também pertencem ao conjunto maior.",
+  realLife: [
+    "Uma turma dentro de uma escola",
+    "Livros de aventura dentro da biblioteca",
+    "Alunos do 9º ano dentro do conjunto de todos os alunos",
+    "Materiais escolares dentro do almoxarifado",
+    "Fotos dentro de uma pasta do computador",
+  ],
+  examples: [
+    {
+      id: "valid-subset",
+      title: "A é subconjunto de B",
+      setA: [2, 4],
+      setB: [2, 4, 6, 8],
+      isSubset: true,
+      explanation:
+        "Todos os elementos de A aparecem em B. Por isso, A é subconjunto de B.",
+    },
+    {
+      id: "not-subset",
+      title: "C não é subconjunto de D",
+      setA: [1, 5],
+      setB: [1, 2, 3],
+      isSubset: false,
+      explanation:
+        "O número 5 está em C, mas não aparece em D. Por isso, C não é subconjunto de D.",
+    },
+  ],
+};
+
+export function isSubset(smallSet, bigSet) {
+  return smallSet.every((element) => bigSet.includes(element));
+}

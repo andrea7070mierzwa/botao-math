@@ -7,6 +7,7 @@ import EmptyUnitaryActivity from "./modules/sets/EmptyUnitaryActivity.jsx";
 import UnionActivity from "./modules/sets/UnionActivity.jsx";
 import IntersectionActivity from "./modules/sets/IntersectionActivity.jsx";
 import DifferenceActivity from "./modules/sets/DifferenceActivity.jsx";
+import SubsetsActivity from "./modules/sets/SubsetsActivity.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -25,6 +26,7 @@ function App() {
           {activeModule === "union" && <UnionActivity />}
           {activeModule === "intersection" && <IntersectionActivity />}
           {activeModule === "difference" && <DifferenceActivity />}
+          {activeModule === "subsets" && <SubsetsActivity />}
         </section>
 
         <aside className="right-panel">

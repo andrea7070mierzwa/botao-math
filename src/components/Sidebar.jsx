@@ -40,7 +40,6 @@ const topicGroups = [
         id: "subsets",
         icon: "⊂",
         title: "Subconjuntos",
-        disabled: true,
       },
     ],
   },

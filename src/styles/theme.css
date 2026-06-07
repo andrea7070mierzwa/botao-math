@@ -1095,3 +1095,142 @@
     grid-template-columns: 1fr;
   }
 }
+.subset-example-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.subset-example-button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.subset-example-button.active,
+.subset-example-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.subset-lab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 18px;
+}
+
+.subset-big-box,
+.subset-result-card {
+  padding: 22px;
+  border-radius: 24px;
+  background: #fbfaff;
+  border: 1px dashed rgba(124, 58, 237, 0.28);
+}
+
+.subset-big-box h3,
+.subset-result-card h3 {
+  color: #4c1d95;
+}
+
+.subset-box-area {
+  position: relative;
+  min-height: 360px;
+  margin-top: 18px;
+  padding: 28px;
+  border: 4px solid #a855f7;
+  border-radius: 34px;
+  background: radial-gradient(circle, #faf5ff, #f3e8ff);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px;
+}
+
+.subset-big-item,
+.subset-item {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: white;
+  color: #4c1d95;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.14);
+}
+
+.subset-small-box {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  width: min(320px, calc(100% - 48px));
+  transform: translateX(-50%);
+  padding: 20px;
+  border: 4px solid #ec4899;
+  border-radius: 26px;
+  background: rgba(255, 241, 248, 0.92);
+  text-align: center;
+}
+
+.subset-small-box h4 {
+  margin: 0 0 8px;
+  color: #9f1239;
+}
+
+.subset-small-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.subset-item.included {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+}
+
+.subset-item.missing {
+  background: linear-gradient(135deg, #f43f5e, #fb7185);
+  color: white;
+}
+
+.subset-result-card {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.subset-expression {
+  min-height: 110px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: radial-gradient(circle, #faf5ff, #f3e8ff);
+  border: 4px solid #a855f7;
+}
+
+.subset-expression strong {
+  color: #4c1d95;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.subset-example-button:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .subset-lab {
+    grid-template-columns: 1fr;
+  }
+
+  .subset-box-area {
+    min-height: 420px;
+  }
+}
