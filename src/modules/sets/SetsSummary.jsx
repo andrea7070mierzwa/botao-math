@@ -1,6 +1,7 @@
 import LessonCard from "../../components/LessonCard.jsx";
 import ReadAloudButton from "../../components/ReadAloudButton.jsx";
 import { setsSummaryData } from "../../data/setsData.js";
+import ModuleFeedbackForm from "../../components/ModuleFeedbackForm.jsx";
 
 function SetsSummary() {
   const summaryText = `${setsSummaryData.title}. ${
@@ -65,8 +66,10 @@ function SetsSummary() {
 
         <div className="ready-badge" aria-hidden="true"></div>
       </section>
-
-      
+      <ModuleFeedbackForm
+        moduleId="sets-summary"
+        moduleTitle="Resumo da trilha de Conjuntos"
+      />
     </div>
   );
 }

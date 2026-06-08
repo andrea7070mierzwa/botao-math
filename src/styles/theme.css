@@ -1714,3 +1714,116 @@
     flex-direction: column;
   }
 }
+.module-feedback-card {
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  box-shadow: 0 14px 40px rgba(87, 55, 130, 0.1);
+}
+
+.module-feedback-header h2 {
+  margin-bottom: 8px;
+  color: #28183f;
+  font-size: 1.8rem;
+}
+
+.module-feedback-header p {
+  color: #625a72;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.module-feedback-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.module-feedback-form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  border-radius: 20px;
+  background: #fbfaff;
+}
+
+.module-feedback-form legend {
+  padding: 0 8px;
+  color: #4c1d95;
+  font-weight: 900;
+}
+
+.module-feedback-form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.module-feedback-form input[type="radio"] {
+  accent-color: #7c3aed;
+}
+
+.text-feedback-label {
+  display: grid !important;
+  align-items: stretch !important;
+  border-radius: 20px !important;
+  background: #fbfaff !important;
+  color: #4c1d95 !important;
+}
+
+.text-feedback-label span {
+  color: #7c6b91;
+  font-size: 0.86rem;
+}
+
+.text-feedback-label textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: 16px;
+  resize: vertical;
+  font: inherit;
+  color: #28183f;
+  background: white;
+}
+
+.rating-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rating-options label {
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  padding: 0;
+}
+
+.module-feedback-form button:focus-visible,
+.module-feedback-form input:focus-visible,
+.text-feedback-label textarea:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .module-feedback-form fieldset {
+    display: grid;
+  }
+
+  .module-feedback-form label {
+    justify-content: flex-start;
+  }
+}
