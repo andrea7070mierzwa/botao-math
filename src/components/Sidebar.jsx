@@ -64,6 +64,11 @@ const topicGroups = [
     title: "Números",
     items: [
       {
+        id: "numbers-intro",
+        icon: "🔢",
+        title: "O que são números?",
+      },
+      {
         id: "natural-numbers",
         icon: "N",
         title: "Naturais",
@@ -85,6 +90,12 @@ const topicGroups = [
         id: "real-numbers",
         icon: "R",
         title: "Reais",
+        disabled: true,
+      },
+      {
+        id: "number-line",
+        icon: "📏",
+        title: "Reta numérica",
         disabled: true,
       },
     ],
