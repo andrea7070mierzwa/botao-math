@@ -21,6 +21,7 @@ import NumberComparison from "./modules/numbers/NumberComparison.jsx";
 import TemperatureIntegers from "./modules/numbers/TemperatureIntegers.jsx";
 import AbsoluteValueActivity from "./modules/numbers/AbsoluteValueActivity.jsx";
 import NumbersSummary from "./modules/numbers/NumbersSummary.jsx";
+import NumbersAssessment from "./modules/numbers/NumbersAssessment.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -53,6 +54,7 @@ function App() {
           {activeModule === "temperature-integers" && <TemperatureIntegers />}
           {activeModule === "absolute-value" && <AbsoluteValueActivity />}
           {activeModule === "numbers-summary" && <NumbersSummary />}
+          {activeModule === "numbers-assessment" && <NumbersAssessment />}
         </section>
 
         <aside className="right-panel">
