@@ -108,6 +108,11 @@ const topicGroups = [
         icon: "📍",
         title: "Distância do zero",
       },
+      {
+        id: "numbers-summary",
+        icon: "📚",
+        title: "Resumo da trilha",
+      },
     ],
   },
   {
