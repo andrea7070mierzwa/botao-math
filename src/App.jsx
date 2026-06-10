@@ -18,6 +18,7 @@ import RationalNumbers from "./modules/numbers/RationalNumbers.jsx";
 import RealNumbers from "./modules/numbers/RealNumbers.jsx";
 import NumberLineActivity from "./modules/numbers/NumberLineActivity.jsx";
 import NumberComparison from "./modules/numbers/NumberComparison.jsx";
+import TemperatureIntegers from "./modules/numbers/TemperatureIntegers.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -47,6 +48,7 @@ function App() {
           {activeModule === "real-numbers" && <RealNumbers />}
           {activeModule === "number-line" && <NumberLineActivity />}
           {activeModule === "number-comparison" && <NumberComparison />}
+          {activeModule === "temperature-integers" && <TemperatureIntegers />}
         </section>
 
         <aside className="right-panel">

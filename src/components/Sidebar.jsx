@@ -98,6 +98,11 @@ const topicGroups = [
         icon: "⚖️",
         title: "Comparação",
       },
+      {
+        id: "temperature-integers",
+        icon: "🌡️",
+        title: "Termômetro",
+      },
     ],
   },
   {
