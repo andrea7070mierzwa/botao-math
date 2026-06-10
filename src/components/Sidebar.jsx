@@ -92,7 +92,6 @@ const topicGroups = [
         id: "number-line",
         icon: "📏",
         title: "Reta numérica",
-        disabled: true,
       },
     ],
   },
