@@ -17,6 +17,7 @@ import IntegerNumbers from "./modules/numbers/IntegerNumbers.jsx";
 import RationalNumbers from "./modules/numbers/RationalNumbers.jsx";
 import RealNumbers from "./modules/numbers/RealNumbers.jsx";
 import NumberLineActivity from "./modules/numbers/NumberLineActivity.jsx";
+import NumberComparison from "./modules/numbers/NumberComparison.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -45,6 +46,7 @@ function App() {
           {activeModule === "rational-numbers" && <RationalNumbers />}
           {activeModule === "real-numbers" && <RealNumbers />}
           {activeModule === "number-line" && <NumberLineActivity />}
+          {activeModule === "number-comparison" && <NumberComparison />}
         </section>
 
         <aside className="right-panel">

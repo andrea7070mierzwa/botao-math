@@ -93,6 +93,11 @@ const topicGroups = [
         icon: "📏",
         title: "Reta numérica",
       },
+      {
+        id: "number-comparison",
+        icon: "⚖️",
+        title: "Comparação",
+      },
     ],
   },
   {
