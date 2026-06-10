@@ -12,6 +12,8 @@ import NumericSetsActivity from "./modules/sets/NumericSetsActivity.jsx";
 import SetsSummary from "./modules/sets/SetsSummary.jsx";
 import SetsAssessment from "./modules/sets/SetsAssessment.jsx";
 import NumbersIntro from "./modules/numbers/NumbersIntro.jsx";
+import NaturalNumbers from "./modules/numbers/NaturalNumbers.jsx";
+import IntegerNumbers from "./modules/numbers/IntegerNumbers.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -35,6 +37,8 @@ function App() {
           {activeModule === "sets-summary" && <SetsSummary />}
           {activeModule === "sets-assessment" && <SetsAssessment />}
           {activeModule === "numbers-intro" && <NumbersIntro />}
+          {activeModule === "natural-numbers" && <NaturalNumbers />}
+          {activeModule === "integer-numbers" && <IntegerNumbers />}
         </section>
 
         <aside className="right-panel">

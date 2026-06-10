@@ -72,13 +72,11 @@ const topicGroups = [
         id: "natural-numbers",
         icon: "N",
         title: "Naturais",
-        disabled: true,
       },
       {
         id: "integer-numbers",
         icon: "Z",
         title: "Inteiros",
-        disabled: true,
       },
       {
         id: "rational-numbers",

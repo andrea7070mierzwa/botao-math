@@ -1909,3 +1909,239 @@
   outline: 3px solid #ec4899;
   outline-offset: 4px;
 }
+.natural-number-lab {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: 18px;
+}
+
+.number-picker-card,
+.quantity-display-card {
+  padding: 22px;
+  border-radius: 24px;
+  background: #fbfaff;
+  border: 1px dashed rgba(124, 58, 237, 0.28);
+}
+
+.natural-number-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.natural-number-button {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 18px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-size: 1.4rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.natural-number-button.active,
+.natural-number-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.quantity-display {
+  min-height: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 28px;
+  background: radial-gradient(circle, #faf5ff, #f3e8ff);
+  border: 4px solid #a855f7;
+}
+
+.quantity-display p {
+  margin: 0;
+  color: #7c6b91;
+  font-weight: 800;
+}
+
+.quantity-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: white;
+  color: #4c1d95;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.14);
+}
+
+.quantity-item span {
+  font-size: 1.4rem;
+}
+
+.natural-number-button:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .natural-number-lab {
+    grid-template-columns: 1fr;
+  }
+}
+.integer-line-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px 0 12px;
+  padding: 22px;
+  border-radius: 24px;
+  background: #f2ecff;
+}
+
+.integer-line-preview span,
+.integer-line-preview strong {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: white;
+  color: #4c1d95;
+  font-size: 1.3rem;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.12);
+}
+
+.integer-line-preview strong {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+}
+
+.integer-lab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 18px;
+}
+
+.integer-number-line-card,
+.integer-examples-card {
+  padding: 22px;
+  border-radius: 24px;
+  background: #fbfaff;
+  border: 1px dashed rgba(124, 58, 237, 0.28);
+}
+
+.integer-number-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px;
+  margin: 18px 0;
+  border-radius: 28px;
+  background: radial-gradient(circle, #faf5ff, #f3e8ff);
+  border: 4px solid #a855f7;
+  overflow-x: auto;
+}
+
+.integer-point {
+  min-width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: #4c1d95;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.14);
+}
+
+.integer-point.active,
+.integer-point:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.integer-value-card {
+  padding: 18px;
+  border-radius: 20px;
+  background: #f2ecff;
+  text-align: center;
+}
+
+.integer-value-card h3 {
+  margin: 0 0 8px;
+  color: #4c1d95;
+  font-size: 3rem;
+}
+
+.integer-value-card p {
+  margin: 0;
+  color: #625a72;
+  font-weight: 800;
+}
+
+.integer-example-list {
+  display: grid;
+  gap: 10px;
+}
+
+.integer-example-button {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 12px;
+  align-items: center;
+  padding: 14px;
+  border: none;
+  border-radius: 18px;
+  background: #ede9fe;
+  color: #5b21b6;
+  text-align: left;
+  cursor: pointer;
+}
+
+.integer-example-button span {
+  grid-row: span 2;
+  font-size: 1.8rem;
+}
+
+.integer-example-button strong {
+  font-size: 1rem;
+}
+
+.integer-example-button small {
+  color: #7c6b91;
+  font-weight: 800;
+}
+
+.integer-example-button.active,
+.integer-example-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.integer-example-button.active small,
+.integer-example-button:hover small {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.integer-point:focus-visible,
+.integer-example-button:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .integer-lab {
+    grid-template-columns: 1fr;
+  }
+}
