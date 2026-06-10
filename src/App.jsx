@@ -19,6 +19,7 @@ import RealNumbers from "./modules/numbers/RealNumbers.jsx";
 import NumberLineActivity from "./modules/numbers/NumberLineActivity.jsx";
 import NumberComparison from "./modules/numbers/NumberComparison.jsx";
 import TemperatureIntegers from "./modules/numbers/TemperatureIntegers.jsx";
+import AbsoluteValueActivity from "./modules/numbers/AbsoluteValueActivity.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -49,6 +50,7 @@ function App() {
           {activeModule === "number-line" && <NumberLineActivity />}
           {activeModule === "number-comparison" && <NumberComparison />}
           {activeModule === "temperature-integers" && <TemperatureIntegers />}
+          {activeModule === "absolute-value" && <AbsoluteValueActivity />}
         </section>
 
         <aside className="right-panel">

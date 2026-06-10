@@ -103,6 +103,11 @@ const topicGroups = [
         icon: "🌡️",
         title: "Termômetro",
       },
+      {
+        id: "absolute-value",
+        icon: "📍",
+        title: "Distância do zero",
+      },
     ],
   },
   {
