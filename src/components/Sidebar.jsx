@@ -87,7 +87,6 @@ const topicGroups = [
         id: "real-numbers",
         icon: "R",
         title: "Reais",
-        disabled: true,
       },
       {
         id: "number-line",

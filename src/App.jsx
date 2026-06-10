@@ -15,6 +15,7 @@ import NumbersIntro from "./modules/numbers/NumbersIntro.jsx";
 import NaturalNumbers from "./modules/numbers/NaturalNumbers.jsx";
 import IntegerNumbers from "./modules/numbers/IntegerNumbers.jsx";
 import RationalNumbers from "./modules/numbers/RationalNumbers.jsx";
+import RealNumbers from "./modules/numbers/RealNumbers.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -41,6 +42,7 @@ function App() {
           {activeModule === "natural-numbers" && <NaturalNumbers />}
           {activeModule === "integer-numbers" && <IntegerNumbers />}
           {activeModule === "rational-numbers" && <RationalNumbers />}
+          {activeModule === "real-numbers" && <RealNumbers />}
         </section>
 
         <aside className="right-panel">
