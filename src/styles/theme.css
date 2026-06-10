@@ -2145,3 +2145,153 @@
     grid-template-columns: 1fr;
   }
 }
+.rational-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px 0 12px;
+  padding: 22px;
+  border-radius: 24px;
+  background: #f2ecff;
+}
+
+.rational-preview span {
+  min-width: 70px;
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: white;
+  color: #4c1d95;
+  font-size: 1.25rem;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.12);
+}
+
+.rational-lab {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+  gap: 18px;
+}
+
+.fraction-picker-card,
+.fraction-visual-card,
+.rational-examples-card {
+  padding: 22px;
+  border-radius: 24px;
+  background: #fbfaff;
+  border: 1px dashed rgba(124, 58, 237, 0.28);
+}
+
+.rational-examples-card {
+  grid-column: 1 / -1;
+}
+
+.fraction-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fraction-button {
+  min-width: 72px;
+  height: 54px;
+  border: none;
+  border-radius: 18px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-size: 1.2rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.fraction-button.active,
+.fraction-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.fraction-bar {
+  display: grid;
+  gap: 6px;
+  min-height: 90px;
+  margin: 18px 0;
+  padding: 10px;
+  border-radius: 22px;
+  background: #f2ecff;
+  border: 4px solid #a855f7;
+}
+
+.fraction-bar span {
+  border-radius: 14px;
+  background: white;
+  box-shadow: inset 0 0 0 2px rgba(124, 58, 237, 0.12);
+}
+
+.fraction-bar span.filled {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+
+.fraction-visual-card p {
+  color: #625a72;
+  font-weight: 800;
+}
+
+.rational-example-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.rational-example-button {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  padding: 16px;
+  border: none;
+  border-radius: 18px;
+  background: #ede9fe;
+  color: #5b21b6;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rational-example-button span {
+  font-size: 2rem;
+}
+
+.rational-example-button strong {
+  font-size: 1.1rem;
+}
+
+.rational-example-button small {
+  color: #7c6b91;
+  font-weight: 800;
+}
+
+.rational-example-button.active,
+.rational-example-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.rational-example-button.active small,
+.rational-example-button:hover small {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.fraction-button:focus-visible,
+.rational-example-button:focus-visible {
+  outline: 3px solid #ec4899;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .rational-lab {
+    grid-template-columns: 1fr;
+  }
+}

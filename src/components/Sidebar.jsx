@@ -82,7 +82,6 @@ const topicGroups = [
         id: "rational-numbers",
         icon: "Q",
         title: "Racionais",
-        disabled: true,
       },
       {
         id: "real-numbers",

@@ -14,6 +14,7 @@ import SetsAssessment from "./modules/sets/SetsAssessment.jsx";
 import NumbersIntro from "./modules/numbers/NumbersIntro.jsx";
 import NaturalNumbers from "./modules/numbers/NaturalNumbers.jsx";
 import IntegerNumbers from "./modules/numbers/IntegerNumbers.jsx";
+import RationalNumbers from "./modules/numbers/RationalNumbers.jsx";
 
 function App() {
   const [activeModule, setActiveModule] = useState("sets-intro");
@@ -39,6 +40,7 @@ function App() {
           {activeModule === "numbers-intro" && <NumbersIntro />}
           {activeModule === "natural-numbers" && <NaturalNumbers />}
           {activeModule === "integer-numbers" && <IntegerNumbers />}
+          {activeModule === "rational-numbers" && <RationalNumbers />}
         </section>
 
         <aside className="right-panel">
